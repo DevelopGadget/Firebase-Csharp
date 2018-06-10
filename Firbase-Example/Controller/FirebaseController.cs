@@ -3,6 +3,10 @@ using Firbase_Example.Model;
 using FireSharp;
 using FireSharp.Config;
 using FireSharp.Interfaces;
+using FireSharp.Response;
+using System;
+using System.Net;
+using System.Threading.Tasks;
 
 namespace Firbase_Example.Controller
 {
@@ -15,7 +19,7 @@ namespace Firbase_Example.Controller
         {
             Config = new FirebaseConfig
             {
-                AuthSecret = "AIzaSyAPS6szX5-SYS0hmtdcTJb0MQeaMlmC9p4",
+                AuthSecret = "lwZV4HydSMJh1t080Ztuim5u4vcwIsfAcCT8fqbD",
                 BasePath = "https://csharp-example.firebaseio.com/",
             };
             _Client = new FirebaseClient(Config);
@@ -26,9 +30,10 @@ namespace Firbase_Example.Controller
             return _Client != null ? true : false;
         }
 
-        public void CreateUser(User Cuenta)
+        public async Task<bool> CreateUser(User Cuenta)
         {
-            _Client.CreateUser(Cuenta.Email, Cuenta.Password);
+            PushResponse response = await _Client.PushAsync("Users", Cuenta);
+            return response.StatusCode == HttpStatusCode.OK ? true : false;
         }
     }
 }

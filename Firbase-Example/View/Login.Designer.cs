@@ -28,57 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             System.Windows.Forms.Label label2;
             System.Windows.Forms.Label label1;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.txt_Email = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_Password = new System.Windows.Forms.TextBox();
             this.btn_Create = new System.Windows.Forms.Button();
             this.btn_Login = new System.Windows.Forms.Button();
             label2 = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // txt_Email
-            // 
-            this.txt_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Email.Location = new System.Drawing.Point(95, 29);
-            this.txt_Email.Name = "txt_Email";
-            this.txt_Email.Size = new System.Drawing.Size(187, 22);
-            this.txt_Email.TabIndex = 0;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(126, 110);
-            this.textBox1.MaxLength = 15;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PasswordChar = '*';
-            this.textBox1.Size = new System.Drawing.Size(156, 22);
-            this.textBox1.TabIndex = 1;
-            // 
-            // btn_Create
-            // 
-            this.btn_Create.Image = global::Firbase_Example.Properties.Resources.account;
-            this.btn_Create.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Create.Location = new System.Drawing.Point(51, 238);
-            this.btn_Create.Name = "btn_Create";
-            this.btn_Create.Size = new System.Drawing.Size(197, 50);
-            this.btn_Create.TabIndex = 3;
-            this.btn_Create.Text = "Crear Cuenta";
-            this.btn_Create.UseVisualStyleBackColor = true;
-            this.btn_Create.Click += new System.EventHandler(this.btn_Create_Click);
-            // 
-            // btn_Login
-            // 
-            this.btn_Login.Image = ((System.Drawing.Image)(resources.GetObject("btn_Login.Image")));
-            this.btn_Login.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Login.Location = new System.Drawing.Point(51, 171);
-            this.btn_Login.Name = "btn_Login";
-            this.btn_Login.Size = new System.Drawing.Size(197, 50);
-            this.btn_Login.TabIndex = 2;
-            this.btn_Login.Text = "Login";
-            this.btn_Login.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -105,6 +64,47 @@
             label1.Text = "    Email:";
             label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // txt_Email
+            // 
+            this.txt_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Email.Location = new System.Drawing.Point(95, 29);
+            this.txt_Email.Name = "txt_Email";
+            this.txt_Email.Size = new System.Drawing.Size(187, 22);
+            this.txt_Email.TabIndex = 0;
+            // 
+            // txt_Password
+            // 
+            this.txt_Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Password.Location = new System.Drawing.Point(126, 110);
+            this.txt_Password.MaxLength = 15;
+            this.txt_Password.Name = "txt_Password";
+            this.txt_Password.PasswordChar = '*';
+            this.txt_Password.Size = new System.Drawing.Size(156, 22);
+            this.txt_Password.TabIndex = 1;
+            // 
+            // btn_Create
+            // 
+            this.btn_Create.Image = global::Firbase_Example.Properties.Resources.account;
+            this.btn_Create.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Create.Location = new System.Drawing.Point(51, 238);
+            this.btn_Create.Name = "btn_Create";
+            this.btn_Create.Size = new System.Drawing.Size(197, 50);
+            this.btn_Create.TabIndex = 3;
+            this.btn_Create.Text = "Crear Cuenta";
+            this.btn_Create.UseVisualStyleBackColor = true;
+            this.btn_Create.Click += new System.EventHandler(this.btn_Create_ClickAsync);
+            // 
+            // btn_Login
+            // 
+            this.btn_Login.Image = ((System.Drawing.Image)(resources.GetObject("btn_Login.Image")));
+            this.btn_Login.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Login.Location = new System.Drawing.Point(51, 171);
+            this.btn_Login.Name = "btn_Login";
+            this.btn_Login.Size = new System.Drawing.Size(197, 50);
+            this.btn_Login.TabIndex = 2;
+            this.btn_Login.Text = "Login";
+            this.btn_Login.UseVisualStyleBackColor = true;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -112,7 +112,7 @@
             this.ClientSize = new System.Drawing.Size(294, 311);
             this.Controls.Add(this.btn_Create);
             this.Controls.Add(this.btn_Login);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_Password);
             this.Controls.Add(this.txt_Email);
             this.Controls.Add(label2);
             this.Controls.Add(label1);
@@ -132,7 +132,7 @@
         #endregion
 
         private System.Windows.Forms.TextBox txt_Email;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_Password;
         private System.Windows.Forms.Button btn_Login;
         private System.Windows.Forms.Button btn_Create;
     }

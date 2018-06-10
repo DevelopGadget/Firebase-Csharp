@@ -1,4 +1,5 @@
 ﻿using Firbase_Example.Controller;
+using Firbase_Example.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,9 +34,9 @@ namespace Firbase_Example
             }
         }
 
-        private void btn_Create_Click(object sender, EventArgs e)
+        private async void btn_Create_ClickAsync(object sender, EventArgs e)
         {
-
+            await _Firebase.CreateUser(new User(txt_Email.Text, txt_Password.Text));
         }
     }
 }
